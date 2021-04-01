@@ -38,7 +38,7 @@ def run_jobsdb_scape():
 
             #print(job)
             print(f'Company Name: {company_name}')
-            print(f"position: {converttostr(position, ' ')}")
+            print(f"Position: {converttostr(position, ' ')}")
             print(f'Location: {Location}')
             if len(requirement) == 3:
                 print('Requirement:')
