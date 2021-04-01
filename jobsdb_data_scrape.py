@@ -1,10 +1,18 @@
 from bs4 import BeautifulSoup
 import requests
 
-html_text = requests.get('https://th.jobsdb.com/th/data-scientist-jobs-in-bangkok/1?Key=data').text
-soup = BeautifulSoup(html_text, 'html.parser')
+def run_jobsdb_scape():
 
-def general_info():
+    url1 = 'https://th.jobsdb.com/th/data-scientist-jobs-in-bangkok/1?Key=data'
+    url2 = 'https://th.jobsdb.com/th/data-scientist-jobs-in-bangkok/2?Key=data'
+    url3 = 'https://th.jobsdb.com/th/data-scientist-jobs-in-bangkok/3?Key=data'
+    url=[url1, url2, url3]
+    page_num = int(input('Scrape Page Number(1-3): '))
+    url=url[page_num-1]
+    
+    html_text = requests.get(url).text
+    soup = BeautifulSoup(html_text, 'html.parser')
+
     raw_filter_position = input('Filter unwanted position: ')
     filter_position = raw_filter_position.split(', ')
     print(f'Filtering out: {filter_position}')
@@ -26,6 +34,7 @@ def general_info():
             requirement = job.find_all('span', class_="FYwKg _2Bz3E C6ZIU_0 _1_nER_0 _2DNlq_0 _29m7__0 _1PM5y_0")
             Location = job.find('span', class_="FYwKg _3MPd_ _2Bz3E And8z").text
             Link = 'https://th.jobsdb.com' + job.find('div',class_='FYwKg').h1.a['href']
+            time = job.find('time', class_="FYwKg _2Bz3E")['datetime']
 
             #print(job)
             print(f'Company Name: {company_name}')
@@ -39,6 +48,6 @@ def general_info():
             else:
                 print('Requirement not found')
             print('Link: ', Link)
+            print('Date Posted: ', time[:10])
             print('')
             print('')
-
