@@ -33,9 +33,9 @@ def general_info():
             print(f'Location: {Location}')
             if len(requirement) == 3:
                 print('Requirement:')
-                print(requirement[0].text)
-                print(requirement[1].text)
-                print(requirement[2].text)
+                print('• ',requirement[0].text)
+                print('• ',requirement[1].text)
+                print('• ',requirement[2].text)
             else:
                 print('Requirement not found')
             print('Link: ', Link)
