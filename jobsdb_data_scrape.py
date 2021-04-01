@@ -42,4 +42,3 @@ def general_info():
             print('')
             print('')
 
-general_info()
