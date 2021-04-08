@@ -13,7 +13,7 @@ def run_jobsdb_scape():
     html_text = requests.get(url).text
     soup = BeautifulSoup(html_text, 'html.parser')
 
-    raw_filter_position = input('Filter unwanted position: ')
+    raw_filter_position = input('Filter unwanted positions: ')
     filter_position = raw_filter_position.split(', ')
     print(f'Filtering out: {filter_position}')
     print('')
