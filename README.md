@@ -6,4 +6,5 @@ This python program allows users to perform web scraping on JobsDB site for new 
 
 Ex. A fresh graduate can filter out "Senior" job position from their search.
 Input Example
-![Input_ex](https://user-images.githubusercontent.com/81757056/114015676-28155300-9894-11eb-827e-954c5f03f175.jpg)
+![Input_ex](https://user-images.githubusercontent.com/81757056/114015816-585cf180-9894-11eb-8197-4dde97bc9e8c.jpg)
+
